@@ -2,8 +2,8 @@ class AppDatum < ApplicationRecord
 
   ERROR_CANVAS = {}
 
-  GIST_CLIENT_ID = "h-AR9dUGtOosoqNxAeLFM8bpYF1ARtWg8J8aD48AoiE"
-  GIST_CLIENT_SECRET = "R4uvFGQFfcOh_ysIbGnAahlnwYgyuzhKYzsU47YOZ_s"
-  GIST_TOKEN_EXCHANGE_URL = "https://web-api-testing.getgist.com/oauth/token"
-  GIST_REDIRECT_URI = "https://0832-27-111-75-198.ngrok.io/app/redirect"
+  GIST_CLIENT_ID = "YOUR_CLIENT_ID" # provided by gist
+  GIST_CLIENT_SECRET = "YOUR_CLIENT_SECRET" # provided by gist
+  GIST_TOKEN_EXCHANGE_URL = "https://web-api.getgist.com/oauth/token"
+  GIST_REDIRECT_URI = "https://your-domain.site/redirect" # configured in gist
 end
