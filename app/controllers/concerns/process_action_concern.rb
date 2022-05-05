@@ -9,7 +9,7 @@ module ProcessActionConcern
     contact_id = conversation['contacts'][0]['id']
     contact = gist_client.contacts.find(id: contact_id)
     components = [{"type":"list", "disabled":false, "items":
-      [{"id":"title", "type":"item", "title":contact['name'], "image_width":18, "image_height":18, "rounded_image":false, "disabled":false}]}]
+      [{"id":"title", "type":"item", "title":(contact['name'] || "Site Visitor"), "image_width":18, "image_height":18, "rounded_image":false, "disabled":false}]}]
     render json: { "canvas" => { "content" => { "components" => components } } }, status: 200
   end
 
