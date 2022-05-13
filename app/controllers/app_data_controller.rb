@@ -26,7 +26,7 @@ class AppDataController < ApplicationController
   # request(POST) will be sent to this path on initial conversation load.
   # request_body:
   #   conversation_id: Unique ID of the current conversation loaded
-  #   inbox_app_id: Unique ID of the registered app in GIST
+  #   app_id: Unique ID of the registered app in GIST
   #   user_id: Unique ID of the teammate
   #   user_secret: slug secret of the teammate
   #   workspace_id: slug secret of the workspace. Will be same as the workspace_id(:state) received in OAuth redirect.
@@ -41,7 +41,7 @@ class AppDataController < ApplicationController
   # request will be sent to this path on each submit action performed inside your canvas.
   # request_body:
   #   conversation_id: Unique ID of the current conversation loaded
-  #   inbox_app_id: Unique ID of the registered app in GIST
+  #   app_id: Unique ID of the registered app in GIST
   #   user_id: Unique ID of the teammate
   #   user_secret: slug secret of the teammate
   #   workspace_id: slug secret of the workspace. Will be same as the workspace_id(:state) received in OAuth redirect.
