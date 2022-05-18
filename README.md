@@ -1,33 +1,32 @@
 # sdk-starter-ruby
-This is a starter app to help you start build a inbox app in gist.
-
-This app is built using Ruby on Rails. 
 
 ## Basic Usage
 This repo contains a bare-bones example that demonstrates how to create a custom app in Gist, including connecting with OAuth 
-and initialize and submit endpoints. You can use this project as a base starter to quickly build custom apps with Gist.
+and handling initialize and submit endpoints. You can use this project as a base starter to quickly build custom apps with Gist.
 
-### action paths
-Repo code includes comments on how initialize and submit path is to be used in building a gist inbox app.
-Also has a action path to handle the OAuth redirection and perform token exchange with Gist.
-For more info on OAuth visit <a href="https://developers.getgist.com/#introduction" target="_blank">gist developer documentation</a>
+**Note**: This app uses [gist-api-ruby](https://github.com/gistplatform/gist-api-ruby) to interact with the [Gist REST API](https://developers.getgist.com/api)
 
-```/app/controllers/app_data_controller.rb```
+### What you need
+- [A Gist developer account](https://app.getgist.com/)
+- [A Gist inbox app](https://developers.getgist.com/docs)
+### Instructions
 
-### gist-api-ruby gem usage
-```ruby 
-gem 'gist-api-ruby'
-``` 
-Gem has been pre included in the repository. App shows basic usage on how to use the gem to access the REST APIs.
-See <a href="https://github.com/gistplatform/gist-api-ruby" target="_blank">gem repository</a> for all available actions in gem
+To install this starter app on your local environment, clone the repository and install dependencies.
 
-```/app/controllers/concerns/process_action_concern.rb```
+```shell
+git clone https://github.com/gistplatform/sdk-starter-ruby.git
+cd sdk-starter-ruby
+bundle install
+```
 
-## To get started
+Replace the `GIST_CLIENT_ID`, `GIST_CLIENT_SECRET` and `GIST_REDIRECT_URI` values in `/app/models/app_datum.rb` appropriately after enabling OAuth in your app detail page in your [Developer Hub](https://app.getgist.com/developer).
 
-1. <a href="https://app.getgist.com" target="_blank">Sign up</a> for Gist
-2. Create a developer app <a href="https://app.getgist.com/developer" target="_blank">here</a>
-3. Grab your app credentials
-4. Clone this repo
-5. Set ClientId and ClientSecret to the credentials from the application you added in step 3.
-6. Build and run the application
+Start the server. 
+```shell
+rails s
+```
+To test this app, we recommend using [ngrok](https://ngrok.io) service to make your localhost accessible publicly and configure the `initialize`, `submit` and `redirect_uri` endpoints in your Gist app.
+
+Now that the app is setup, you can change what the app does by updating the code under the `initialize_path` and `submit_path` methods in `/app/controllers/app_data_controller.rb`
+
+For more details, visit our <a href="https://developers.getgist.com/docs" target="_blank">developer documentation</a>
